@@ -1,0 +1,17 @@
+--------------------------------------------------------------------------------
+INFORMATION
+--------------------------------------------------------------------------------
+
+Name   : btc_bitcoind
+Type   : Dockerfile
+
+Authors: liv community
+License: Simplified BSD License
+
+--------------------------------------------------------------------------------
+DESCRIPTION
+--------------------------------------------------------------------------------
+
+Bitcoin Core is programmed to decide which block chain contains valid
+transactions. The users of Bitcoin Core only accept transactions for that block
+chain, making it the Bitcoin block chain that everyone else wants to use.
