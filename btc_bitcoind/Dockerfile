@@ -25,8 +25,8 @@ LABEL license="Simplified BSD License"
 #-------------------------------------------------------------------------------
 
 # BITCOIND
-ENV BITCOIND_VERSION="0.16.2"
-ENV BITCOIND_CHECKSUM="71f217e30e98d5ccc1fb574b9499595e87e118e596278fad5507a7b84650859c"
+ENV BITCOIND_VERSION="0.17.0"
+ENV BITCOIND_CHECKSUM="9d6b472dc2aceedb1a974b93a3003a81b7e0265963bd2aa0acdcb17598215a4f"
 
 #-------------------------------------------------------------------------------
 # EXPOSE
