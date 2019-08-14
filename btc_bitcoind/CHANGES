@@ -14,6 +14,9 @@ F: feature
 
 --------------------------------------------------------------------------------
 
+* Version 0.18.1-1 (2019-08-14)
+F: Update 'bitcoind' to version '0.18.1'
+
 * Version 0.18.0-1 (2019-05-08)
 F: Update 'bitcoind' to version '0.18.0'
 F: Add signature check for download
