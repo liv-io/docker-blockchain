@@ -3,13 +3,13 @@
 #-------------------------------------------------------------------------------
 
 # Download image
-FROM centos:centos7
+FROM centos:centos8
 
 # Update packages
-RUN yum clean all && \
-    yum -y update && \
-    yum clean all && \
-    rm -rf /var/cache/yum
+RUN dnf clean all && \
+    dnf -y update && \
+    dnf clean all && \
+    rm -rf /var/cache/dnf
 
 #-------------------------------------------------------------------------------
 # LABELS
@@ -38,10 +38,10 @@ EXPOSE 8333/tcp
 #-------------------------------------------------------------------------------
 
 # Install dependencies
-RUN yum -y install tar && \
-    yum -y install wget && \
-    yum clean all && \
-    rm -rf /var/cache/yum
+RUN dnf -y install tar && \
+    dnf -y install wget && \
+    dnf clean all && \
+    rm -rf /var/cache/dnf
 
 #-------------------------------------------------------------------------------
 # PERSISTENCE
