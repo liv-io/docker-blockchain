@@ -25,7 +25,7 @@ LABEL license="Simplified BSD License"
 #-------------------------------------------------------------------------------
 
 # BITCOIND
-ENV BITCOIND_VERSION="0.18.1"
+ENV BITCOIND_VERSION="0.19.0.1"
 
 #-------------------------------------------------------------------------------
 # EXPOSE
@@ -92,4 +92,4 @@ COPY bitcoin.conf /app/bitcoind/current/conf/
 
 # Run 'bitcoind' as user 'bitcoind'
 USER bitcoind
-ENTRYPOINT ["/app/bitcoind/current/bin/bitcoind", "-conf=/app/bitcoind/current/conf/bitcoin.conf"]
+CMD ["/app/bitcoind/current/bin/bitcoind", "-conf=/app/bitcoind/current/conf/bitcoin.conf"]

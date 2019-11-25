@@ -14,21 +14,24 @@ F: feature
 
 --------------------------------------------------------------------------------
 
+* Version 0.19.0.1-1 (2019-11-25)
+C: Update bitcoind to version 0.19.0.1
+
 * Version 0.18.1-2 (2019-11-18)
 E: Update Docker image to CentOS 8
 
 * Version 0.18.1-1 (2019-08-14)
-F: Update 'bitcoind' to version '0.18.1'
+C: Update bitcoind to version 0.18.1
 
 * Version 0.18.0-1 (2019-05-08)
-F: Update 'bitcoind' to version '0.18.0'
+C: Update bitcoind to version 0.18.0
 F: Add signature check for download
 
 * Version 0.17.1-1 (2019-01-03)
-F: Update 'bitcoind' to version '0.17.1'
+C: Update bitcoind to version 0.17.1
 
 * Version 0.17.0-1 (2018-11-23)
-F: Update 'bitcoind' to version '0.17.0'
+C: Update bitcoind to version 0.17.0
 
 * Version 0.16.2-1 (2018-08-08)
 F: Initial release
