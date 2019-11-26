@@ -85,10 +85,10 @@ RUN ln -s /app/bitcoind/bitcoin-${BITCOIND_VERSION} /app/bitcoind/current
 RUN chown -R root:root /app/bitcoind/
 
 # Create configuration directory
-RUN install --directory --owner=root --group=root --mode=0755 /app/bitcoind/current/conf/
+RUN install --directory --owner=root --group=root --mode=0755 /app/bitcoind/bitcoin-${BITCOIND_VERSION}/conf/
 
 # Copy 'bitcoin.conf'
-COPY bitcoin.conf /app/bitcoind/current/conf/
+COPY bitcoin.conf /app/bitcoind/bitcoin-${BITCOIND_VERSION}/conf/
 
 # Run 'bitcoind' as user 'bitcoind'
 USER bitcoind
