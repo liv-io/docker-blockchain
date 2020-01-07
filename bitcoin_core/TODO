@@ -2,7 +2,7 @@
 INFORMATION
 --------------------------------------------------------------------------------
 
-Name   : btc_bitcoind
+Name   : bitcoin_core
 Type   : Dockerfile
 
 Authors: liv community

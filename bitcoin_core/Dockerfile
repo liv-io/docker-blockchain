@@ -15,7 +15,7 @@ RUN dnf clean all && \
 # LABELS
 #-------------------------------------------------------------------------------
 
-LABEL name="btc_bitcoind"
+LABEL name="bitcoin_core"
 LABEL application="bitcoind"
 LABEL author="liv community"
 LABEL license="Simplified BSD License"
@@ -31,7 +31,14 @@ ENV BITCOIND_VERSION="0.19.0.1"
 # EXPOSE
 #-------------------------------------------------------------------------------
 
+# Bitcoin RPC
+EXPOSE 8332/tcp
+
+# Bitcoin Network
 EXPOSE 8333/tcp
+
+# Bitcoin ZeroMQ
+EXPOSE 5555/tcp
 
 #-------------------------------------------------------------------------------
 # DEPENDENCIES
@@ -63,12 +70,12 @@ RUN install --directory --owner=root --group=root --mode=0755 /app/bitcoind/
 # Create 'bitcoind' user and group
 RUN useradd -c 'bitcoind' -m -p '!' -u 10000 -s '/bin/bash' bitcoind
 
-# Copy GPG key and create keyring
-COPY bitcoin.key /root/.gnupg/bitcoin.key
+# Copy GPG public key and create keyring
+COPY bitcoin.pem /root/.gnupg/bitcoin.pem
 RUN gpg --no-default-keyring --keyring /root/.gnupg/bitcoin.gpg --fingerprint && \
-    gpg --no-default-keyring --keyring /root/.gnupg/bitcoin.gpg --batch --import /root/.gnupg/bitcoin.key
+    gpg --no-default-keyring --keyring /root/.gnupg/bitcoin.gpg --batch --import /root/.gnupg/bitcoin.pem
 
-# Download, verify, unarchive and delete 'bitcoind' archive
+# Download, verify, unarchive and delete 'bitcoin-core' archive
 RUN wget -q -O /tmp/bitcoin-${BITCOIND_VERSION}-x86_64-linux-gnu.tar.gz \
     https://bitcoin.org/bin/bitcoin-core-${BITCOIND_VERSION}/bitcoin-${BITCOIND_VERSION}-x86_64-linux-gnu.tar.gz && \
     wget -q -O /tmp/SHA256SUMS.asc https://bitcoin.org/bin/bitcoin-core-${BITCOIND_VERSION}/SHA256SUMS.asc && \
